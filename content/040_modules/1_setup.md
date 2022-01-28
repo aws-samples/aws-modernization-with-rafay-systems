@@ -26,7 +26,7 @@ Cloud credentials provide privileges to programmatically interact with your Amaz
 
 - Click the Copy button for the "External ID"
 
-- Click on the following CloudFormation Template link and login to the AWS console with the credentials you have been provided:  https://console.aws.amazon.com/cloudformation/home?#/stacks/new?stackName=Rafay-Cloud-Credential&templateURL=https://rafay-aws-workshop.s3.us-west-2.amazonaws.com/Rafay-Cloud-Credential.template
+- Click on the following CloudFormation Template link and login to the AWS console with the credentials you have been provided:  https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/new?stackName=Rafay-Cloud-Credential&templateURL=https://rafay-aws-workshop.s3.us-west-2.amazonaws.com/Rafay-Cloud-Credential.template
 
 - Once logged in to the AWS console you should be at the "Create Stack" page. Click Next
 
