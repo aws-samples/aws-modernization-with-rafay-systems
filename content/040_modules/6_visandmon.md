@@ -27,7 +27,7 @@ Estimated time burden for this part is 15 minutes.
 
 Click on Home -> Dashboard to view all clusters, projects, user activity, resource utilization and events in the Project. You should see something like the example below.
 
-![Org Dashboard](img/part6/org_dashboard.png)
+![Org Dashboard](/040_modules/img/part6/org_dashboard.png)
 
 ---
 
@@ -35,7 +35,7 @@ Click on Home -> Dashboard to view all clusters, projects, user activity, resour
 
 Select a Project and Click on Dashboard to view all clusters, projects, user activity, application, workloads and events across the entire Project. You should see something like the example below.
 
-![Project Dashboard](img/part6/project_dashboard.png)
+![Project Dashboard](/040_modules/img/part6/project_dashboard.png)
 
 ---
 
@@ -43,7 +43,7 @@ Select a Project and Click on Dashboard to view all clusters, projects, user act
 
 In your project, click on Infrastructure -> Clusters. You should see something like the example below providing an overview of critical, operational metrics for your cluster. 
 
-![Cluster Dashboard](img/part6/cluster_dashboard.png)
+![Cluster Dashboard](/040_modules/img/part6/cluster_dashboard.png)
 
 --- 
 
@@ -51,18 +51,18 @@ In your project, click on Infrastructure -> Clusters. You should see something l
 
 In the cluster dashboard, click on Nodes. This will provide you an overview of all the nodes in the cluster. You should see something like the example below.
 
-![Node Dashboard](img/part6/node_dashboard.png)
+![Node Dashboard](/040_modules/img/part6/node_dashboard.png)
 
 Click on "Overview" for one of your nodes. This will provide you with a dashboard for the node.
 
-![Node Dashboard Details](img/part6/node_dashboard_trends.png)
+![Node Dashboard Details](/040_modules/img/part6/node_dashboard_trends.png)
 
 ---
 
 ## k8s Resources 
 Click on the "Resources" tab. This will provide you access to an "integrated Kubernetes dashboard" where you can view the k8s resources organized by type, by namespace etc. 
 
-![Kubernetes Dashboard](img/part6/k8s_resources.png)
+![Kubernetes Dashboard](/040_modules/img/part6/k8s_resources.png)
 
 --- 
 
@@ -70,7 +70,7 @@ Click on the "Resources" tab. This will provide you access to an "integrated Kub
 
 By default, the k8s dashboard will list the pods in the "kube-system" namespace. Click on the "coredns" pod to view the Pod dashboard. You should see something like the example below. 
 
-![Pod Dashboard](img/part6/pod_dashboard.png)
+![Pod Dashboard](/040_modules/img/part6/pod_dashboard.png)
 
 ---
 
@@ -78,11 +78,11 @@ By default, the k8s dashboard will list the pods in the "kube-system" namespace.
 
 Click on "Configuration" for the pod in the pod dashboard
 
-![Pod Configuration](img/part6/pod_config.png)
+![Pod Configuration](/040_modules/img/part6/pod_config.png)
 
 Now, click on the container in the configuration to go to the "container dashboard". You should see something like the example below.
 
-![Container Dashboard](img/part6/container_dashboard.png)
+![Container Dashboard](/040_modules/img/part6/container_dashboard.png)
 
 ---
 

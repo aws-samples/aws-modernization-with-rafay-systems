@@ -20,7 +20,7 @@ Cloud credentials provide privileges to programmatically interact with your Amaz
 
 - Select "Cloud Credentials", Click on "New Credential" and provide a unique name "aws-workshop-x" where x aligns with your Rafay user.
 
-![Create Cloud Credential](img/part1/cloud_credential_create.png)
+![Create Cloud Credential](/040_modules/img/part1/cloud_credential_create.png)
 
 - Click on the drop down for "Credential Type" and select Role 
 
@@ -40,7 +40,7 @@ Cloud credentials provide privileges to programmatically interact with your Amaz
 
 - Return to the Rafay Console and paste the Role ARN value into Role ARN section in "Add Credential"
 
-![Create Cloud Credential](img/part1/cloud_credential_create.png)
+![Create Cloud Credential](/040_modules/img/part1/cloud_credential_create.png)
 
 - Write down the name created above "aws-workshop-x" for the cloud credential.  Note: The specification files will need to be updated to match this unique name.
 
@@ -81,7 +81,7 @@ RCTL supports both a "config file" as well as "dynamic config" model. The latter
 - Click on __Download CLI Config__ to download the configuration file.
 - Save the configuration file on your local system
 
-![CLI Tools Page](img/part1/cli_tools_page.png)
+![CLI Tools Page](/040_modules/img/part1/cli_tools_page.png)
 
 - In the Cloud9 interface, go to File -> Upload Local Files...
 - Drag and drop or select the CLI config file that was previously downloaded

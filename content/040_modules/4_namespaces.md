@@ -25,7 +25,7 @@ Estimated time burden for this part is 5 minutes.
 - Enter "amazon-cloudwatch" for ***Name***
 - Select "Wizard" for ***Type*** and Save 
 
-![Create Namespace](img/part4/create_ns.png)
+![Create Namespace](/040_modules/img/part4/create_ns.png)
 
 
 !!! Note:
@@ -42,7 +42,7 @@ You will be presented with an intuitive wizard that you can use to configure you
 
 In the example below, we have entered "key=addon" and "value=cloudwatch" 
 
-![Configure Namespace](img/part4/configure_ns.png)
+![Configure Namespace](/040_modules/img/part4/configure_ns.png)
 
 --- 
 ## Step 3: Select Placement  
@@ -53,14 +53,14 @@ We have the ability to place the namespace on multiple clusters through the flee
 - Select your imported cluster 
 - Click "SAVE & GO TO PUBLISH"
 
-![Place Namespace](img/part4/place_ns.png)
+![Place Namespace](/040_modules/img/part4/place_ns.png)
 
 ---
 ## Step 4: Publish Namespace
 
 Click on Publish. In a few seconds, the configured namespace will be deployed on the target cluster. Note that multiple target clusters can be in completely separate security domains and the controller can still manage namespace lifecyle remotely. 
 
-![Publish Namespace](img/part4/publish_ns.png)
+![Publish Namespace](/040_modules/img/part4/publish_ns.png)
 
 ---
 
