@@ -24,7 +24,7 @@ Estimated time burden for this part is 5 minutes.
 - Click on the "Kubectl" link on the cluster. This will provide you with a web based, zero trust kubectl shell. 
 - Type in a kubectl command such as "kubectl get ns" to get a response from the remote cluster on your desktop operating behind a NAT/firewall. 
 
-![Web ZTKA](/040_modules/img/part3/ztka_org_admin.png)
+![Web ZTKA](img/part3/ztka_org_admin.png)
 
 The controller injects a service account (sa) "Just In Time(JIT)" on the target cluster. The service account is automatically configured with the user's role in the Org. You can view the JIT service account by using the following command. In the example below, the service account for the user "demos@rafay.co" was created just "5 seconds" back as the user opened the web based kubectl console. The service account is automatically removed from the target cluster once the configured lifetime expires. 
 
@@ -50,7 +50,7 @@ All commands performed using the zero trust kubectl channel are centralized thro
 Audit logs can be viewed by "API" or "Commands" (for web based shell). See an example of the audit logs below.
 
 
-![ZTKA Audit Trail](/040_modules/img/part3/ztka_audit.png)
+![ZTKA Audit Trail](img/part3/ztka_audit.png)
 
 ---
 

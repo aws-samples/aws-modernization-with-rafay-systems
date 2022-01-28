@@ -20,65 +20,82 @@ Cloud credentials provide privileges to programmatically interact with your Amaz
 
 - Select "Cloud Credentials", Click on "New Credential" and provide a unique name "aws-workshop-x" where x aligns with your Rafay user.
 
-- Input the ARN that has been provided with your Rafay and AWS credentials into the External ID box.
+![Create Cloud Credential](img/part1/cloud_credential_create.png)
 
-![Create Cloud Credential](/040_modules/img/part1/cloud_credential_create.png)
+- Click on the drop down for "Credential Type" and select Role 
 
-- Provide the name created above "aws-workshop-x" for the cloud credential.  Note: The specification files will need to be updated to match the unique name.
+- Click the Copy button for the "External ID"
+
+- Click on the following CloudFormation Template link and login to the AWS console with the credentials you have been provided:  https://console.aws.amazon.com/cloudformation/home?#/stacks/new?stackName=Rafay-Cloud-Credential&templateURL=https://rafay-aws-workshop.s3.us-west-2.amazonaws.com/Rafay-Cloud-Credential.template
+
+- Once logged in to the AWS console you should be at the "Create Stack" page. Click Next
+
+- This brings up the "Specify Stack Details" page -> Enter the External ID copied from Rafay Credential Screen above into the "ExternalID" field and click next
+
+- This brings up the "Configure Stack Options" page -> Click Next
+
+- This brings up the "Review Rafay-Cloud-Credential" page.  Scroll to the bottom, select that you acknowledge that the CloudFormation template might create an IAM resource and then click "Create Stack". 
+
+- Wait 10 seconds and refresh the webpage.  Go to "Outputs" Tab at the top of the page and copy the Role ARN value
+
+- Return to the Rafay Console and paste the Role ARN value into Role ARN section in "Add Credential"
+
+![Create Cloud Credential](img/part1/cloud_credential_create.png)
+
+- Write down the name created above "aws-workshop-x" for the cloud credential.  Note: The specification files will need to be updated to match this unique name.
+
 ---
 
 ## Step 2: Download RCTL
 
 The RCTL CLI allows you to programmatically interact with the controller enabling users to construct sophisticated automation workflows. 
 
-- On the left panel of the admin console, click on "My Tools".
-- Click on the "Download CLI" button and download the package for your operating system
-- Unzip the downloaded package into a folder (for example: “rctl”).
+Run the following commands in the Cloud9 instance to download and extract RCTL
 
-![Tools Page](/040_modules/img/part1/cli_tools_page.png)
-
-![Download CLI](/040_modules/img/part1/cli_download_page.png)
+```
+curl -s -o rctl-linux-amd64.tar.bz2 https://s3-us-west-2.amazonaws.com/rafay-prod-cli/publish/rctl-linux-amd64.tar.bz2
+tar -xf rctl-linux-amd64.tar.bz2
+chmod 0755 rctl
+```
 
 ---
+
+## Set Path for RCTL 
+
+After downloading the RCTL CLI, run the command below to add it to your OS's PATH environment variable. 
+
+```
+export PATH=$PATH:/home/ec2-user/environment
+```
 
 ## Initialize RCTL
   
 The RCTL utility needs to be initialized with credentials and other information before it can interact with the Controller. At a given time, RCTL can be initialized with only one configuration. It can always be reinitialized if it needs to be bound to a different Org/Tenant.
 
-Note: that the RBAC associated with the user's credentials is automatically enforced.
+Note: The RBAC associated with the user's credentials is automatically enforced.
 
 RCTL supports both a "config file" as well as "dynamic config" model. The latter is well suited for automation pipelines where the configuration is provided dynamically and there is no need to permanently bind RCTL to an Org or Project. For today's workshop, we will use a "config file".
 
 ### RCTL Config File
-- Navigate to the "My Tools" page in the Web Console
+- Navigate to the "My Tools" page in the Rafay Web Console
 - Click on __Download CLI Config__ to download the configuration file.
-- Save the configuration file on your system
+- Save the configuration file on your local system
 
-![CLI Tools Page](/040_modules/img/part1/cli_tools_page.png)
+![CLI Tools Page](img/part1/cli_tools_page.png)
 
-## Setting Path for RCTL 
+- In the Cloud9 interface, go to File -> Upload Local Files...
+- Drag and drop or select the CLI config file that was previously downloaded
+- In the Cloud9 terminal, run the following command to initilize RCTL
 
-After installing the RCTL CLI, follow the steps below to add it to your OS's PATH environment variable. 
-
-### macOS and Linux 
-
-export PATH=$PATH:<folder where you unzipped RCTL> 
-
-### Windows
-
-- Press the Windows key and enter environment variables.
-- From the list of suggestions, choose Edit environment variables for your account.
-- Choose PATH, and then choose Edit.
-- Add the path you found in the first step into the Variable value field, for example, C:\rctl\rctl.exe.
-- Choose OK twice to apply the new settings.
-- Close any running command prompts and reopen the command prompt window.
-
+```
+rctl config init <CONFIG FILE NAME>
+```
 ## View RCTL Config
 
 You can view the current configuration for RCTL by using the "config show" command.
 
 ```
-./rctl config show
+rctl config show
 
 Profile:                                                                    prod
 REST Endpoint:                                                 console.rafay.dev
@@ -111,10 +128,10 @@ rctl config show
 
 ### Set Project
 
-For this workshop each person will have their own project that will be provided along with the credentials. This step will ensure that you set the project context before you can perform operations in this project. For example, to set the project context to your Rafay project provided in the workshop
+For this workshop each person will have their own project that will be provided along with the credentials. This step will ensure that you set the project context before you can perform operations in this project. For example, to set the project context to your Rafay project provided in the workshop run the below command with the name of the project provided
 
 ```
-rctl config set project aws-workshop-x
+rctl config set project <NAME OF ASSIGNED PROJECT>
 ```
 
 Once the project context has been successfully set, ensure you verify this in your local config file.
@@ -127,7 +144,7 @@ Once the project context has been successfully set, ensure you verify this in yo
 
 ## Step 3: Clone Git Repo 
 
-Declarative specs for the Amazon EKS cluster and other resources are available in a [Git repository](https://github.com/RafaySystems/getstarted)
+Declarative specs for the Amazon EKS cluster and other resources are available in a [Git repository](https://github.com/RafaySystems/getstarted).  A GitHub account is required for this step.  If you don't have a GitHub account, you can sign-up here:  https://github.com/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F&source=header-home
 
 - Clone the Git repository to your laptop using the command below. 
 
