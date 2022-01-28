@@ -43,7 +43,7 @@ If you did not encounter any errors, you can optionally verify if everything was
 - Navigate to your aws-workshop project in your Org
 - Select Integrations -> Repositories
 
-![Repository](img/blueprint/add_repository.png)
+![Repository](/040_modules/img/blueprint/add_repository.png)
 
 ---
 
@@ -87,7 +87,7 @@ If you did not encounter any errors, you can optionally verify if everything was
 - Select Infrastructure -> Namespaces
 - You should see an namesapce called "amazon-cloudwatch"
 
-![Cloudwatch Agent Namespace](img/blueprint/cloudwatch_namespace.png)
+![Cloudwatch Agent Namespace](/040_modules/img/blueprint/cloudwatch_namespace.png)
 
 ---
 
@@ -141,7 +141,7 @@ If you did not encounter any errors, you can optionally verify if everything was
 - Select Infrastructure -> Addons 
 - You should see an addon called "cloudwatch-addon"
 
-![CloudWatch Agent Addon](img/blueprint/cloudwatch_addon.png)
+![CloudWatch Agent Addon](/040_modules/img/blueprint/cloudwatch_addon.png)
 
 ---
 
@@ -177,7 +177,7 @@ If you did not encounter any errors, you can optionally verify if everything was
 - Select Infrastructure -> Blueprint 
 - You should see an blueprint called "cloudwatch-blueprint
 
-![CloudWatch Blueprint](img/blueprint/cloudwatch_blueprint.png)
+![CloudWatch Blueprint](/040_modules/img/blueprint/cloudwatch_blueprint.png)
 
 ---
 
@@ -226,7 +226,7 @@ If you did not encounter any errors, you can optionally verify if everything was
 - Select Infrastructure -> Blueprint 
 - Click on the "cloudwatch-blueprint" custom cluster blueprint 
 
-![v1 CloudWatch Blueprint](img/blueprint/cloudwatch_blueprint_newversion.png)
+![v1 CloudWatch Blueprint](/040_modules/img/blueprint/cloudwatch_blueprint_newversion.png)
 
 --- 
 

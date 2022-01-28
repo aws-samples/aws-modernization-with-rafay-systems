@@ -26,7 +26,7 @@ To setup a GitOps pipeline, you will need a Git repository. To help you get star
 
 This will create a copy of the repository in your Git system (e.g. GitHub). An example is shown below.
 
-![Forked Git Repository](img/part7/forked_repo.png)
+![Forked Git Repository](/040_modules/img/part7/forked_repo.png)
 
 ---
 
@@ -37,12 +37,12 @@ This will create a copy of the repository in your Git system (e.g. GitHub). An e
 - Provide a friendly name
 - Select Git for Type
 
-![New Repository](img/part7/new_repo.png)
+![New Repository](/040_modules/img/part7/new_repo.png)
 
 - Provide the Git repo's Endpoint URL 
 - Save 
 
-![Git Endpoint](img/part7/configure_repo.png)
+![Git Endpoint](/040_modules/img/part7/configure_repo.png)
 
 !!! Note
     It does not matter if your Github repo is public or private. If private, you need to provide access credentials. 
@@ -52,7 +52,7 @@ Optionally,
 - Under Infrastructure -> Repositories, Click on validate for your repository 
 - If you see a validation successful message, the controller is able to access the repository 
 
-![Validate Repository](img/part7/validate_repo.png)
+![Validate Repository](/040_modules/img/part7/validate_repo.png)
 
 ---
 
@@ -67,7 +67,7 @@ We need to create a namespace to deploy our workload via the GitOps pipeline
 
 In the example below, we have created a namespace called "first" on our cluster. 
 
-![Create Namespace](img/part7/publish_namespace.png)
+![Create Namespace](/040_modules/img/part7/publish_namespace.png)
 
 --- 
 
@@ -82,7 +82,7 @@ Now, we are ready to create a workload based on k8s manifests in our Git reposit
 - Select "Git" for Repository Type
 - Select the namespace you created in the previous step and Select "Continue"
 
-![Create Workload](img/part7/new_helm3_workload.png)
+![Create Workload](/040_modules/img/part7/new_helm3_workload.png)
 
 ---
 
@@ -95,14 +95,14 @@ We are now ready to configure our workload by (a) specifying the Git repo and (b
 - Enter path for Helm file i.e. "Helm/webserver" 
 - Enter path for the values file i.e. "Helm/webserver/values.yaml" and Select "Continue"
 
-![Configure Workload](img/part7/config_helm3_workload.png)
+![Configure Workload](/040_modules/img/part7/config_helm3_workload.png)
 
 
 - Select your cluster for Placement Policy and Publish workload. 
 
 In a few seconds, the workload's k8s resource will become operational on your cluster. 
 
-![Published Workload](img/part7/published_helm3_workload.png)
+![Published Workload](/040_modules/img/part7/published_helm3_workload.png)
 
 Optionally, you can also verify the status of the resources using the zero trust kubectl channel. You should see something like the following 
 

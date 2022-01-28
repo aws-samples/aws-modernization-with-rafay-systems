@@ -125,7 +125,7 @@ To retrieve the status of the apply operation, enter the below command with the 
 
 - Login to the web console and view the cluster being provisioned
 
-![Create Cluster](img/part2/cluster-provision-1.png)
+![Create Cluster](/040_modules/img/part2/cluster-provision-1.png)
 
 Once the cluster finishes provisioning, download the cluster configuration file and compare it to the specification file used to create the cluster.  The two files will match.
 
@@ -178,7 +178,7 @@ rafay-system                        Active   2d19h
 
 Once this step is complete, you should be able to view the cluster in the web console. 
 
-![Imported EKS Cluster](img/part2/eksa_cluster_rafay.png)
+![Imported EKS Cluster](/040_modules/img/part2/eksa_cluster_rafay.png)
 
 ---
 

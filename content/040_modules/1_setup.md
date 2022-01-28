@@ -22,7 +22,7 @@ Cloud credentials provide privileges to programmatically interact with your Amaz
 
 - Input the ARN that has been provided with your Rafay and AWS credentials into the External ID box.
 
-![Create Cloud Credential](img/part1/cloud_credential_create.png)
+![Create Cloud Credential](/040_modules/img/part1/cloud_credential_create.png)
 
 - Provide the name created above "aws-workshop-x" for the cloud credential.  Note: The specification files will need to be updated to match the unique name.
 ---
@@ -35,9 +35,9 @@ The RCTL CLI allows you to programmatically interact with the controller enablin
 - Click on the "Download CLI" button and download the package for your operating system
 - Unzip the downloaded package into a folder (for example: “rctl”).
 
-![Tools Page](img/part1/cli_tools_page.png)
+![Tools Page](/040_modules/img/part1/cli_tools_page.png)
 
-![Download CLI](img/part1/cli_download_page.png)
+![Download CLI](/040_modules/img/part1/cli_download_page.png)
 
 ---
 
@@ -54,7 +54,7 @@ RCTL supports both a "config file" as well as "dynamic config" model. The latter
 - Click on __Download CLI Config__ to download the configuration file.
 - Save the configuration file on your system
 
-![CLI Tools Page](img/part1/cli_tools_page.png)
+![CLI Tools Page](/040_modules/img/part1/cli_tools_page.png)
 
 ## Setting Path for RCTL 
 

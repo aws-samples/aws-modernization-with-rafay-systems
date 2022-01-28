@@ -17,7 +17,7 @@ the EKS IAM authentication, so we will disable it and rely on the IAM role inste
 
 1. Close the Preferences tab
    
-    ![Turn off temp credentials](/images/setup/iamRoleWorkspace.gif)
+    ![Turn off temp credentials](/images/iamRoleWorkspace.gif)
 
 1. Copy and run (paste with **Ctrl+P** or **CMD+P**) the commands below.
 
@@ -49,7 +49,7 @@ the EKS IAM authentication, so we will disable it and rely on the IAM role inste
       test -n "$AWS_REGION" && echo AWS_REGION is "$AWS_REGION" || echo AWS_REGION is not set
       
       # Validate that our IAM role is valid.
-      aws sts get-caller-identity --query Arn | grep partnerName-workshop-admin -q && echo "IAM role valid" || echo "IAM role NOT valid"
+      aws sts get-caller-identity --query Arn | grep mod -q && echo "IAM role valid" || echo "IAM role NOT valid"
       ```
 
       {{% notice warning %}}
