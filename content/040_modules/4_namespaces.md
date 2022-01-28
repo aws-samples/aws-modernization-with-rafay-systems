@@ -10,7 +10,7 @@ weight: 14
 This is part 4 of a multi-part workshop.  In this section you will: 
 
 - Configure a Kubernetes namespace spec in your project 
-- Publish this namespace on a fleet of Kubernetes clusters
+- Publish this namespace to a Kubernetes cluster
 
 **Estimated Time**
 
@@ -22,10 +22,10 @@ Estimated time burden for this part is 5 minutes.
 
 - Select Infrastructure -> Namespaces
 - Click on "New Namespace"
-- Enter "kubeless" for ***Name***
+- Enter "amazon-cloudwatch" for ***Name***
 - Select "Wizard" for ***Type*** and Save 
 
-![Create Namespace](/040_modules/img/part4/create_ns.png)
+![Create Namespace](img/part4/create_ns.png)
 
 
 !!! Note:
@@ -40,27 +40,27 @@ You will be presented with an intuitive wizard that you can use to configure you
 - Provide k8s compliant text for the key and value 
 - Save 
 
-In the example below, we have entered "key=addon" and "value=kubeless" 
+In the example below, we have entered "key=addon" and "value=cloudwatch" 
 
-![Configure Namespace](/040_modules/img/part4/configure_ns.png)
+![Configure Namespace](img/part4/configure_ns.png)
 
 --- 
 ## Step 3: Select Placement  
 
-Since we two clusters in our project for this exercise, we can perform multi cluster operations. 
+We have the ability to place the namespace on multiple clusters through the fleet management capabilities of the platform.  For this excercise, we will place the namespace on the imported cluster only for now.
 
 - Select "Specific Clusters" for Placement Policy 
-- Select your cluster 
+- Select your imported cluster 
 - Click "SAVE & GO TO PUBLISH"
 
-![Place Namespace](/040_modules/img/part4/place_ns.png)
+![Place Namespace](img/part4/place_ns.png)
 
 ---
 ## Step 4: Publish Namespace
 
-Click on Publish. In a few seconds, the configured namespace will be deployed on the target clusters. Note that the target clusters can be in completely separate security domains and the controller can still manage namespace lifecyle remotely. 
+Click on Publish. In a few seconds, the configured namespace will be deployed on the target cluster. Note that multiple target clusters can be in completely separate security domains and the controller can still manage namespace lifecyle remotely. 
 
-![Publish Namespace](/040_modules/img/part4/publish_ns.png)
+![Publish Namespace](img/part4/publish_ns.png)
 
 ---
 
@@ -71,49 +71,49 @@ Optionally, you can verify what the published namespace looks like on your clust
 - Navigate to Infrastructure -> Clusters 
 - Click on Kubectl 
 
-In the example below, you can see that the "kubeless" namespace was created on the cluster a few seconds back when we published it. 
+In the example below, you can see that the "amazon-cloudwatch" namespace was created on the cluster a few seconds back when we published it. 
 
 ``` yaml hl_lines="8"
 kubectl get ns 
 
-NAME              STATUS   AGE
-default           Active   40h
-kube-node-lease   Active   40h
-kube-public       Active   40h
-kube-system       Active   40h
-kubeless          Active   34s
-rafay-infra       Active   13h
-rafay-system      Active   16h
+NAME                STATUS   AGE
+amazon-cloudwatch   Active   12s
+default             Active   26h
+kube-node-lease     Active   26h
+kube-public         Active   26h
+kube-system         Active   26h
+rafay-infra         Active   14m
+rafay-system        Active   15m
 ```
 
 You can also look deeper into the namespace by describing it. Notice that the the "custom label" we specified is part of the namespace.
 
 ``` yaml hl_lines="4"
-kubectl describe ns kubeless
+kubectl describe ns amazon-cloudwatch
 
-Name:         kubeless
-Labels:       addon=kubeless
+Name:         amazon-cloudwatch
+Labels:       addon=cloudwatch
               app.kubernetes.io/managed-by=Helm
-              kubernetes.io/metadata.name=kubeless
-              name=kubeless
+              kubernetes.io/metadata.name=amazon-cloudwatch
+              name=amazon-cloudwatch
               rafay.dev/auxiliary=true
               rafay.dev/component=namespace
               rafay.dev/global=true
               rafay.dev/name=namespace
-              rep-cluster=k5zpglk
-              rep-cluster-name=desktop
+              rep-cluster=mx6vp0m
+              rep-cluster-name=basic-eks
               rep-drift-reconcillation=disabled
-              rep-organization=lk5od2e
+              rep-organization=1ky5702
               rep-partner=rx28oml
-              rep-placement=mx6ox7m
-              rep-project=kgxy58m
-              rep-project-name=desktop
+              rep-placement=28104lk
+              rep-project=3mx397m
+              rep-project-name=aws-workshop-01
               rep-system-managed=true
-              rep-workload=namespace-kj351lm-kubeless
-              rep-workloadid=qkoz7nm
-Annotations:  meta.helm.sh/release-name: namespace-kj351lm-kubeless
-              meta.helm.sh/release-namespace: kubeless
-              rafay.dev/resource-hash: efbeb365597980119ab784ad5eba8d1baf2d8c7cb8b78605d1020974c118de5f
+              rep-workload=namespace-k6wzqwm-amazon-cloudwatch
+              rep-workloadid=kg1637k
+Annotations:  meta.helm.sh/release-name: namespace-k6wzqwm-amazon-cloudwatch
+              meta.helm.sh/release-namespace: amazon-cloudwatch
+              rafay.dev/resource-hash: 9fb4dd6c47c9edbd27b73b28bce1913e6ba021ee2d0fdfe54c956822390bd45e
               rep-drift-action: deny
 Status:       Active
 

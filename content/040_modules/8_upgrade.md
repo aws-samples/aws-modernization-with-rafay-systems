@@ -30,7 +30,7 @@ Confirm the current control plane version of the cluster
 
 - Go to Infrastructure -> Clusters and view the current version of the control plane
 
-![Verify Cluster Version](/040_modules/img/part8/upgrade-version-1.png)
+![Verify Cluster Version](img/part8/upgrade-version-1.png)
 
 Download the current cluster config from the existing cluster
 
@@ -105,11 +105,11 @@ Cluster: test-eks
 
 From the web console, we can see that the ugprade is in progress.  Note that the upgrade can take up to 40 minutes to complete.
 
-![Cluster Upgrade](/040_modules/img/part8/upgrade-version-2.png)
+![Cluster Upgrade](img/part8/upgrade-version-2.png)
 
 Once the upgrade is complete, we can see that the kubernetes version of the cluster control plane has been upgraded.  Note that an upgrade for the nodegroup versions will still be available.  This will be updated in the next step.
 
-![Verify Cluster Version](/040_modules/img/part8/upgrade-version-3.png)
+![Verify Cluster Version](img/part8/upgrade-version-3.png)
 
 
 ---
@@ -122,7 +122,7 @@ Confirm the current version of the nodes in the cluster
 
 - Go to Infrastructure -> Clusters, click on the cluster -> Node Group and view the K8's Version
 
-![Verify NodeGroup Version](/040_modules/img/part8/k8s-version-1.png)
+![Verify NodeGroup Version](img/part8/k8s-version-1.png)
 
 Download the current cluster config from the existing cluster
 
@@ -198,11 +198,11 @@ Cluster: test-eks
 
 From the web console, we can see that the ugprade is in progress.  Note that the upgrade can take up to 15 minutes to complete.
 
-![Cluster Upgrade](/040_modules/img/part8/k8s-version-2.png)
+![Cluster Upgrade](img/part8/k8s-version-2.png)
 
 Once the upgrade is complete, we can see that the kubernetes version of the node groups have been upgraded.
 
-![Verify Cluster Version](/040_modules/img/part8/k8s-version-3.png)
+![Verify Cluster Version](img/part8/k8s-version-3.png)
 
 
 ---

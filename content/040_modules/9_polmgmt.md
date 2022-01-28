@@ -61,7 +61,7 @@ You can have as many policies as you want in a Project in an Org. An OPA policy 
 - Enter "k8sreplicalimits" and select "upload file" for artifact sync
 - Upload the YAML file you saved above
 
-![Constraint Template](/040_modules/img/part9/constraint_template.png)
+![Constraint Template](img/part9/constraint_template.png)
 
 !!! Important
     Ensure that the name you provide for the template matches the name in the YAML file
@@ -131,7 +131,7 @@ In this step, we will create a "custom constraint" based on the "constraint temp
     Ensure that the name you provide for the constraint matches the name in the YAML file
 
 
-![Constraint](/040_modules/img/part9/constraint.png)
+![Constraint](img/part9/constraint.png)
 
 
 ``` yaml hl_lines="12 13"
@@ -161,7 +161,7 @@ A policy comprises at least one constraints (default and/or custom) and optional
 - Provide a version (alphanumeric is ok)
 - Select the "replica-limits" constraint from the dropdown and Save 
 
-![Policy](/040_modules/img/part9/policy_version.png)
+![Policy](img/part9/policy_version.png)
 
 ---
 
@@ -178,11 +178,11 @@ In the previous step, you created a policy comprising OPA Gatekeeper constraints
 - Select "minimal" for base blueprint
 - Select "Enable OPA Gatekeeper", select the "OPA policy" and version we created in the previous step and Sav
 
-![OPA Blueprint](/040_modules/img/part9/opa_blueprint.png)
+![OPA Blueprint](img/part9/opa_blueprint.png)
 
 Navigate to your cluster and apply the "OPA" custom cluster blueprint on the cluster. In a few minutes, all required components for OPA Gatekeeper and the constraints will become operational on your cluster. 
 
-![OPA Blueprint](/040_modules/img/part9/opa_bp_cluster.png)
+![OPA Blueprint](img/part9/opa_bp_cluster.png)
 
 Optionally, you can also use kubectl to look at the OPA gatekeeper resources on the cluster
 
@@ -220,19 +220,7 @@ replica-limits   5m
 
 This will perform a real time retrieval of "policy violations" already existing on the selected cluster and display the results to the administrator. In our example, we can see that it is reporting that our pre-existing workload has deployments that violate our policy. A logical approach will be for security administrators to work with the workload owners to remediate the violations. 
 
-![OPA Violations](/040_modules/img/part9/policy_violations.png)
-
----
-
-## Step 7: New Deployments
-
-In this step, we will see what workload owners will experience if they try to deploy a new workload or update an existing workload that is not in compliance with the configured policy in the cluster blueprint. 
-
-- Navigate to your Git repo and update the "replicaCount" in the values.yaml file to "1" 
-- The GitOps pipeline will pick up the changes and attempt to deploy to the remote cluster
-- The pipeline job will fail because the specs are "not in compliance" with the configured policy. Workload owners will be presented with a friendly error message as in the example shown below.
-
-![GitOps Pipeline Failed](/040_modules/img/part9/gitops_failed.png)
+![OPA Violations](img/part9/policy_violations.png)
 
 ---
 
