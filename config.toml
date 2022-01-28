@@ -4,7 +4,7 @@ baseURL = "/"
 languageCode = "en-US"
 defaultContentLanguage = "oyo"
 
-title = "Amazon EKS SSP Workshop"
+title = "Introduction to Rafay Kubernetes Operations Platform with Amazon EKS"
 theme = "hugo-theme-learn"
 metaDataFormat = "yaml"
 defaultContentLanguageInSubdir= "false"
@@ -17,9 +17,9 @@ enableEmoji = true
   # See the config.toml file from this documentation site to have an example.
   #editURL = ""
   # Author of the site, will be used in meta information
-  author = "Andrew Park"
+  author = "Andrew Park / Tim Fisher"
   # Description of the site, will be used in meta information
-  description = "AWS Modernization with Rafay Systems"
+  description = "Introduction to Amazon EKS Operations w/ Rafay Systems"
   # Shows a checkmark for visited pages on the menu
   showVisitedLinks = true
   # Disable Home button.
@@ -47,35 +47,30 @@ enableEmoji = true
 [outputs]
 home = ["HTML", "RSS", "JSON"]
 
-[[menu.shortcuts]] 
-name = "<i class='fas fa-graduation-cap'></i> Modernization Workshops"
-url = "https://awsworkshop.io"
+[[menu.shortcuts]]
+name = "Rafay Console Login"
+url = "https://console.rafay.dev/#/login"
 weight = 10
 
 [[menu.shortcuts]]
-name = "<i class='fas fa-tools'></i> AWS Builders Library"
-url = "https://aws.amazon.com/builders-library/"
+name = "Rafay Homepage"
+url = "https://rafay.co"
+weight = 10
+
+[[menu.shortcuts]]
+name = "Rafay Free Trial"
+url = "https://rafay.co/start"
 weight = 11
 
 [[menu.shortcuts]]
-name = "<i class='far fa-lightbulb'></i> Modernization with AWS"
-url = "https://aws.amazon.com/blogs/modernizing-with-aws/"
+name = "Rafay Docs"
+url = "https://docs.rafay.co"
 weight = 20
 
 [[menu.shortcuts]]
-name = "<i class='fas fa-chalkboard-teacher'></i> EKS Workshop"
-url = "https://eksworkshop.com/"
-weight = 21
-
-[[menu.shortcuts]]
-name = "<i class='fas fa-chalkboard-teacher'></i> ECS Workshop"
-url = "https://ecsworkshop.com/"
-weight = 22
-
-[[menu.shortcuts]]
-name = "<i class='fas fa-chalkboard-teacher'></i> App Mesh Workshop"
-url = "https://www.appmeshworkshop.com/"
-weight = 23
+name = "<i class='fas fa-graduation-cap'></i> Modernization Workshops"
+url = "https://awsworkshop.io"
+weight = 20 (e
 
 [markup]
   defaultMarkdownHandler = "blackfriday"
