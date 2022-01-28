@@ -16,11 +16,11 @@ If you are currently logged in to an AWS Account, you can log out using this [li
 
 1. Connect to the portal by clicking the button or browsing to [https://dashboard.eventengine.run/](https://dashboard.eventengine.run/). The following screen shows up. Enter the provided hash in the text box. The button in the bottom right corner changes to **Accept Terms & Login**. Click on that button to continue.
 
-   ![Event Engine](/images/setup/event-engine-initial-screen.png)
+   ![Event Engine](/images/event-engine-initial-screen.png)
 
 2. Choose **AWS Console**, then **Open AWS Console**.
 
-   ![Event Engine Dashboard](/images/setup/event-engine-dashboard.png)
+   ![Event Engine Dashboard](/images/event-engine-dashboard.png)
 
 3. Use a single region for the duration of this workshop. This workshop supports the following regions:
 
@@ -28,7 +28,7 @@ If you are currently logged in to an AWS Account, you can log out using this [li
 
 Please select **US East (N.Virginia)** in the top right corner.
 
-![Event Engine Region](/images/setup/event-engine-region.png)
+![Event Engine Region](/images/event-engine-region.png)
 
 {{% notice warning %}}
 This account will expire at the end of the workshop and  all the resources created will be automatically de-provisioned. You will not be able to access this account after today.
