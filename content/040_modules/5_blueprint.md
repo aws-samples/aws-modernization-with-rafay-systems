@@ -197,7 +197,7 @@ We will use rctl to apply the newly created blueprint to the imported cluster.
 
 - Edit the file "imported-cluster-bootstrap.yaml" that was previosuly created when importing the cluster
 - Update the cluster blueprint section of the file with the name of the newly created blueprint, "cloudwatch-blueprint"
-- Add the blueprint version to spec file
+- Under the blueprint section, add the blueprint version to spec file
 
 ``` yaml
     blueprint: cloudwatch-blueprint
@@ -205,43 +205,6 @@ We will use rctl to apply the newly created blueprint to the imported cluster.
 ```
 
 - Save the file
-- The updated spec should look similar to the following
-
-``` yaml
-kind: Cluster
-metadata:
-  name: cloudwatch-cluster-xx
-  project: aws-workshop-xx
-  labels:
-    env: dev
-    type: eks-workloads
-spec:
-  blueprint: cloudwatch-blueprint
-  blueprintversion: v1
-  cloudprovider: dev-aws
-  cniprovider: aws-cni
-  type: eks
----
-apiVersion: rafay.io/v1alpha5
-kind: ClusterConfig
-metadata:
-  name: cloudwatch-cluster-xx
-  region: us-east-1
-  tags:
-    'demo': 'true'
-  version: "1.20"
-managedNodeGroups:
-  - name: ng-1
-    instanceType: t3.large
-    desiredCapacity: 2
-    iam:
-     withAddonPolicies:
-      albIngress: true
-      autoScaler: true
-      efs: true
-      cloudWatch: true
-```
-
 - Execute the following command to update the cluster with the newly created blueprint
 
 ```
