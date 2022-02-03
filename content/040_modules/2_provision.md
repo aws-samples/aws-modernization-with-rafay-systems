@@ -12,67 +12,52 @@ This is part 2 of a multi-part workshop.  In this section of the workshop you wi
 
 ---
 
-## Step 1: Configure and Provision Amazon EKS Cluster
+## Step 1: Provision Amazon EKS Cluster
 
 In this step, you will configure and customize your Amazon EKS Cluster specification using a YAML based cluster specification.
 
 Provisioning will take approximately 40 minutes to complete. The final step in the process is the blueprint sync for the default blueprint. This can take a few minutes to complete because this requires the download of several container images and deployment of monitoring and log aggregation components.
 
-- In the left hand pane of the Cloud9 instance, right click and select "New File".  Right clikc the new file and rename it to "eks-cluster-basic.yaml"
-- Open the file and add the cluster spec details below
+- Open Terminal (on macOS/Linux) or Command Prompt (Windows) and navigate to the folder where you forked the Git repository 
+- Navigate to the folder "<your folder>/aws-workshops/kop-workshop/cluster"
+- The "provisioned-cluster.yaml" file contains the declarative specification for the cluster.
 
-- Save the below specification file to your computer as "eks-cluster-basic.yaml"
-
-``` yaml
+```yaml hl_lines="3 4 7 14"
 kind: Cluster
 metadata:
-  name: cloudwatch-cluster
+  name: provisioned-cluster-xx
   project: aws-workshop-xx
-  labels:
-    env: dev
-    type: eks-workloads
 spec:
   blueprint: default
-  cloudprovider: dev-aws
+  cloudprovider: aws-cloudcredential-xx
   cniprovider: aws-cni
   type: eks
 ---
 apiVersion: rafay.io/v1alpha5
 kind: ClusterConfig
 metadata:
-  name: cloudwatch-cluster
+  name: provisioned-cluster-xx
   region: us-east-1
-  tags:
-    'demo': 'true'
   version: "1.20"
 managedNodeGroups:
   - name: ng-1
     instanceType: t3.large
     desiredCapacity: 2
-    iam:
-     withAddonPolicies:
-      albIngress: true
-      autoScaler: true
-      efs: true
-      cloudWatch: true
 ```
 
-Update the following sections of the specification file with details to match your environment
+- Update the following sections of the specification file with details to match your environment. Replace the "xx" with the number of your project.
 
-- Update the project section with the name of the project in your organization
-``` yaml
-    project: aws-workshop-xx
+```
+- name: provisioned-cluster-xx
+- project: aws-workshop-xx
+- cloudprovider: aws-cloudcredential-xx
+- name: provisioned-cluster-xx
 ```
 
-- Update the cloudprovider section with the name of the cloud credential that was previously created
-``` yaml
-    cloudprovider: dev-aws
-```
 - Save the file
-
 - Execute the following command to provision the cluster from the specification file previously defined
 ```
-rctl apply -f eks-cluster-basic.yaml
+rctl apply -f provisioned-cluster.yaml
 ```
 ***Expected output (with a task id):***
 
@@ -87,7 +72,7 @@ rctl apply -f eks-cluster-basic.yaml
     },
     {
       "operation": "ClusterCreation",
-      "resource_name": "cloudwatch-cluster",
+      "resource_name": "provisioned-cluster",
       "status": "PROVISION_TASK_STATUS_PENDING"
     }
   ],
@@ -114,7 +99,7 @@ rctl status apply d2wg4k8
     },
     {
       "operation": "ClusterCreation",
-      "resource_name": "cloudwatch-cluster",
+      "resource_name": "provisioned-cluster",
       "status": "PROVISION_TASK_STATUS_INPROGRESS"
     }
   ],
@@ -138,11 +123,11 @@ Once the cluster finishes provisioning, download the cluster configuration file 
 
 In this step, you will import an existing Amazon EKS cluster
 
-- Run the following commands to import the cluster
+- Run the following commands to import the cluster.  Replace the "xx" with the number of your project.
 
 ```
-rctl create cluster imported basic-eks > basic-eks-bootstrap.yaml
-kubectl apply -f basic-eks-bootstrap.yaml
+rctl create cluster imported imported-cluster-xx > imported-cluster-bootstrap.yaml
+kubectl apply -f imported-cluster-bootstrap.yaml
 ```
 
 You can monitor progress/status by clicking the cluster in the Rafay console.

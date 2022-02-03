@@ -18,7 +18,7 @@ Cloud credentials provide privileges to programmatically interact with your Amaz
 
 - Login to the Rafay Console with the credentials provided and click on Infrastructure
 
-- Select "Cloud Credentials", Click on "New Credential" and provide a unique name "aws-workshop-x" where x aligns with your Rafay user.
+- Select "Cloud Credentials", Click on "New Credential" and provide a unique name "aws-cloudcredential-xx" where xx aligns with your Rafay user.
 
 ![Create Cloud Credential](/040_modules/img/part1/cloud_credential_create.png)
 
@@ -42,7 +42,7 @@ Cloud credentials provide privileges to programmatically interact with your Amaz
 
 ![Create Cloud Credential](/040_modules/img/part1/cloud_credential_create.png)
 
-- Write down the name created above "aws-workshop-x" for the cloud credential.  Note: The specification files will need to be updated to match this unique name.
+- Write down the name created above "aws-cloudcredential-xx" for the cloud credential.  Note: The specification files will need to be updated to match this unique name.
 
 ---
 
@@ -144,15 +144,15 @@ Once the project context has been successfully set, ensure you verify this in yo
 
 ## Step 3: Clone Git Repo 
 
-Declarative specs for the Amazon EKS cluster and other resources are available in a [Git repository](https://github.com/RafaySystems/getstarted).  A GitHub account is required for this step.  If you don't have a GitHub account, you can sign-up here:  https://github.com/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F&source=header-home
+Declarative specs for the Amazon EKS cluster and other resources are available in a [Git repository](https://github.com/RafaySystems/aws-workshops).  A GitHub account is required for this step.  If you don't have a GitHub account, you can sign-up here:  https://github.com/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F&source=header-home
 
 - Clone the Git repository to your laptop using the command below. 
 
 ```
-git clone https://github.com/RafaySystems/getstarted.git
+git clone https://github.com/RafaySystems/aws-workshops.git
 ```
 
-- Once complete, you should see a folder called "cloudwatch" which contains the specs needed for this guide. 
+- Once complete, you should see a folder called "kop_workshop" which contains the specs needed for this guide. 
 
 --- 
 

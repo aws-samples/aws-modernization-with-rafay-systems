@@ -14,14 +14,10 @@ In this workshop, you will learn how to standardize the configuration, deploymen
 |------|--------------------------------------------------------|
 | 1    | [Setup](020_intro/1_setup.html) and Configuration                  |
 | 2    | [Provision and Import](020_intro/2_provision.html) Amazon EKS Clusters
-| 3    | [ZeroTrust Kubectl Access](020_intro/3_ztka.html) into an Amazon EKS Cluster
-| 4    | [Namespace](020_intro/4_namespaces.html) setup and configuration
+| 3    | [Visability and Monitoring](020_intro/3_visandmon.html) of Amazon EKS Clusters
+| 4    | [ZeroTrust Kubectl Access](020_intro/4_ztka.html) into an Amazon EKS Cluster
 | 5    | Add CloudWatch to Amazon EKS Clusters through [Rafay Cluster Blueprint](020_intro/5_blueprint.html)
-| 6    | [Visability and Monitoring](020_intro/6_visandmon.html) of Amazon EKS Clusters
-| 7    | [Add Workload](020_intro/7_workload.html) to an Amazon EKS cluster
-| 8    | [Upgrade](020_intro/8_upgrade.html) an Amazon EKS cluster
-| 9    | [Policy Management](020_intro/9_polmgmt.html) of Amazon EKS clusters
-| 10   | [Deprovision](020_intro/10_deprov.html) an Amazon EKS cluster |  
+| 6    | [Deprovision](020_intro/6_deprov.html) an Amazon EKS cluster | 
 
 
 ---
