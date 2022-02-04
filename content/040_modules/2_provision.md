@@ -110,7 +110,7 @@ rctl status apply d2wg4k8
 
 - Login to the web console and view the cluster being provisioned
 
-![Create Cluster](/040_modules/img/part2/cluster-provision-1.png)
+![Create Cluster](/images/cluster-provision-1.png)
 
 Once the cluster finishes provisioning, download the cluster configuration file and compare it to the specification file used to create the cluster.  The two files will match.
 
@@ -134,7 +134,7 @@ You can monitor progress/status by clicking the cluster in the Rafay console.
 
 Once this step is complete, you should be able to view the cluster details in the console. 
 
-![Imported EKS Cluster](/040_modules/img/part2/eksa_cluster_rafay.png)
+![Imported EKS Cluster](/images/eksa_cluster_rafay.png)
 
 ---
 
