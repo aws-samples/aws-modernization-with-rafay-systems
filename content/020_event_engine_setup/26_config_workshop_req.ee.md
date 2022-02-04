@@ -56,29 +56,4 @@ the EKS IAM authentication, so we will disable it and rely on the IAM role inste
    If the IAM role is not valid, <span style="color: red;">**DO NOT PROCEED**</span>. Go back and confirm the steps on this page.
    {{% /notice %}}
 
-
-1. Copy and run (paste with **Ctrl+P** or **CMD+P**) the commands below.
-
-    # Verify there is an EKS cluster already provisioned, the EKS cluster's name is basic-eks
-      aws eks list-clusters --region us-east-1
-          
-      # Install kubectl binary
-      curl -o kubectl https://amazon-eks.s3.us-west-2.amazonaws.com/1.19.6/2021-01-05/bin/linux/amd64/kubectl
-          
-      # Apply permission to execute binary
-      chmod +x ./kubectl
-          
-      # Copy binary to PATH, which allows you to write kubectl commands in any folder 
-      mkdir -p $HOME/bin && cp ./kubectl $HOME/bin/kubectl && export PATH=$HOME/bin:$PATH
-          
-      #Verify kubectl is installed and can be executed
-      kubectl version
-          
-      # Update the kubeconfig file and point to the Kube API server
-      aws eks update-kubeconfig --name basic-eks --region us-east-1
-          
-      # Verify you are connected to EKS cluster
-      kubectl get pods --all-namespaces
-
-
 If you have completed the above instructions, please  move to the Partner Setup section!
