@@ -13,7 +13,7 @@ The Rafay Kubernetes Operations Platform (KOP) is a modern operations approach f
 As Kubernetes becomes more mature through Cloud Native Computing Foundation (CNCF) projects it's becoming more complex and harder to manage at scale which is leading to increased costs, time to support, and actually inhibiting/stalling/preventing modernization efforts. Rafay combines key services that are required to run Kubernetes at scale into a single centralized platform that delivers enterprise grade Kubernetes operations. Kubernetes operations is a holistic approach that unifies the lifecycle management of both Kubernetes clusters and containerized applications. With Rafay, teams that are required to operate and/or enable other teams in an enterprise to operate Kubernetes take advantage of the following Rafay KOP services -- across both clusters and applications:
 
 
-![Rafay Overview](/010_introduction/images/Rafay-Services-V3.png)
+![Rafay Overview](/images/Rafay-Services-V3.png)
 ---
 
 ### Multi-Cluster Management Service: 
@@ -40,7 +40,7 @@ Enables development, operations and security/governance teams to visualize and m
 
 With Rafay, enterprises can use any Kubernetes distribution and immediately gain centralized automation, security, visibility, and governance capabilities for Kubernetes cluster and application lifecycle management — across private clouds running in data centers, public clouds, including AWS, and remote/edge locations.
 
-![Rafay Capabilities](/010_introduction/images/Rafay-Capabilities-Blue-2-V5.png)
+![Rafay Capabilities](/images/Rafay-Capabilities-Blue-2-V5.png)
 
 ---
 

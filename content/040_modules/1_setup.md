@@ -18,9 +18,9 @@ Cloud credentials provide privileges to programmatically interact with your Amaz
 
 - Login to the Rafay Console with the credentials provided and click on Infrastructure
 
-- Select "Cloud Credentials", Click on "New Credential" and provide a unique name "aws-workshop-x" where x aligns with your Rafay user.
+- Select "Cloud Credentials", Click on "New Credential" and provide a unique name "aws-cloudcredential-xx" where xx aligns with your Rafay user.
 
-![Create Cloud Credential](/040_modules/img/part1/cloud_credential_create.png)
+![Create Cloud Credential](/images/cloud_credential_create.png)
 
 - Click on the drop down for "Credential Type" and select Role 
 
@@ -40,9 +40,9 @@ Cloud credentials provide privileges to programmatically interact with your Amaz
 
 - Return to the Rafay Console and paste the Role ARN value into Role ARN section in "Add Credential"
 
-![Create Cloud Credential](/040_modules/img/part1/cloud_credential_create.png)
+![Create Cloud Credential](/images/cloud_credential_create.png)
 
-- Write down the name created above "aws-workshop-x" for the cloud credential.  Note: The specification files will need to be updated to match this unique name.
+- Write down the name created above "aws-cloudcredential-xx" for the cloud credential.  Note: The specification files will need to be updated to match this unique name.
 
 ---
 
@@ -81,7 +81,7 @@ RCTL supports both a "config file" as well as "dynamic config" model. The latter
 - Click on __Download CLI Config__ to download the configuration file.
 - Save the configuration file on your local system
 
-![CLI Tools Page](/040_modules/img/part1/cli_tools_page.png)
+![CLI Tools Page](/images/cli_tools_page.png)
 
 - In the Cloud9 interface, go to File -> Upload Local Files...
 - Drag and drop or select the CLI config file that was previously downloaded
@@ -144,15 +144,15 @@ Once the project context has been successfully set, ensure you verify this in yo
 
 ## Step 3: Clone Git Repo 
 
-Declarative specs for the Amazon EKS cluster and other resources are available in a [Git repository](https://github.com/RafaySystems/getstarted).  A GitHub account is required for this step.  If you don't have a GitHub account, you can sign-up here:  https://github.com/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F&source=header-home
+Declarative specs for the Amazon EKS cluster and other resources are available in a [Git repository](https://github.com/RafaySystems/aws-workshops).  A GitHub account is required for this step.  If you don't have a GitHub account, you can sign-up here:  https://github.com/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F&source=header-home
 
 - Clone the Git repository to your laptop using the command below. 
 
 ```
-git clone https://github.com/RafaySystems/getstarted.git
+git clone https://github.com/RafaySystems/aws-workshops.git
 ```
 
-- Once complete, you should see a folder called "cloudwatch" which contains the specs needed for this guide. 
+- Once complete, you should see a folder called "kop_workshop" which contains the specs needed for this guide. 
 
 --- 
 
