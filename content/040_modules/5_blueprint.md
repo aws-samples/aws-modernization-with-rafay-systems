@@ -5,10 +5,11 @@ chapter: true
 weight: 15
 ---
 
+In this section of the workshop you will create a custom cluster blueprint with a [Amazon CloudWatch Agent](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/WhatIsCloudWatch.html) add-on, based on declarative specifications. 
 
-## What Will You Do
-
-This is part 5 of a multi-part workshop.  In this section of the workshop you will create a custom cluster blueprint with a [Amazon CloudWatch Agent](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/WhatIsCloudWatch.html) add-on, based on declarative specifications. 
+<!--
+TODO: Rafay team - why we are teaching this, what problem we are trying to solve
+-->
 
 ---
 
@@ -16,21 +17,8 @@ This is part 5 of a multi-part workshop.  In this section of the workshop you wi
 
 In this step, you will create a repository in your project so that the controller can retrieve the Helm charts automatically. 
 
-- Open Terminal (on macOS/Linux) or Command Prompt (Windows) and navigate to the folder where you forked the Git repository 
-- Navigate to the folder "<your folder>/aws-workshops/kop-workshop/repository"
-
-The "cloudwatch-repository.yaml" file contains the declarative specification for the repository. In this case, the specification is of type "Helm Repository" and the "endpoint" is pointing to the AWS Github repository that includes the CloudWatch Helm chart. 
-
-```yaml hl_lines="6 7"
-apiVersion: config.rafay.dev/v2
-kind: Repository
-metadata:
-  name: cloudwatch-repo
-spec:
-  repositoryType: HelmRepository
-  endpoint:  https://aws.github.io/eks-charts
-  credentialType: CredentialTypeNotSet
-```
+Go to Cloud9 and navigate to the folder where you forked the Git repository */aws-workshops/kop-workshop/repository* and open *cloudwatch-repository.yaml* file. This file contains the declarative specification for the repository. In this case, the specification is of type **Helm Repository** and the *endpoint* is pointing to the AWS Github repository that includes the CloudWatch Helm chart. 
+![CloudWatch Repository configuration file](/images/cloudwatch-repository.png)
 
 - Type the command below to create the repository
 
@@ -41,7 +29,8 @@ rctl create repository -f cloudwatch-repository.yaml
 If you did not encounter any errors, you can optionally verify if everything was created correctly on the controller.
 
 - Navigate to your aws-workshop project
-- Select Integrations -> Repositories
+
+- Select **Integrations -> Repositories**
 
 ![Repository](/images/add_repository.png)
 
@@ -49,43 +38,31 @@ If you did not encounter any errors, you can optionally verify if everything was
 
 ## Step 2: Create Addon
 
-In this step, you will create a custom addon for the Cloudwatch Agent. The "cloudwatch-addon.yaml" file contains the declarative specification for the addon.
+In this step, you will create a custom addon for the Cloudwatch Agent. Navigate to the folder */aws-workshops/kop-workshop/addon* and find 2 files:
 
-The following details are used to build the declarative specification.
+- *cloudwatch-addon.yaml* file contains the declarative specification for the addon
 
-- "v1" because this is our first version
-- Name of addon is "cloudwatch-addon" 
-- The addon will be deployed to a namespace called "amazon-cloudwatch"
-- You will be using a "custom-values.yaml" file as an override which is located in the folder "<your folder>/aws-workshops/kop-workshop/addon"  
-- The "aws-cloudwatch-metrics" chart will be used from the previously created repository named "cloudwatch-repo"
+- *custom-values.yaml* file is used as an override
 
-- Open Terminal (on macOS/Linux) or Command Prompt (Windows) and navigate to the folder where you forked the Git repository 
-- Navigate to the folder "<your folder>/aws-workshops/kop-workshop/addon"
-- Update the following section of the specification file with details to match your environment. Replace the "xx" with the number of your project.
+Let's open both and inspect. The following details are used to build the declarative specification:
 
+- *v1* because this is our first version
+
+- Name of addon is *cloudwatch-addon*
+
+- The addon will be deployed to a namespace called *amazon-cloudwatch*
+
+- The *aws-cloudwatch-metrics* chart will be used from the previously created repository named *cloudwatch-repo*
+
+![CloudWatch Agent Addon](/images/rafay-cloudwatch-addon.png)
+
+Let's update files with our configuration:
+
+- Update the following section of the specification file with details to match your environment. Replace the *xx* with the number of your project.
 ```
 - project: aws-workshop-xx
 ```
-
-```yaml hl_lines="4"
-kind: AddonVersion
-metadata:
-  name: v1
-  project: aws-workshop-xx
-spec:
-  addon: cloudwatch-addon
-  namespace: amazon-cloudwatch
-  template:
-    type: Helm3
-    valuesFile: custom-values.yaml
-    repository_ref: cloudwatch-repo
-    repo_artifact_meta:
-      helm:
-       chartName: aws-cloudwatch-metrics
-```
-
-- Update the "custom-values.yaml" file located in the folder "<your folder>/aws-workshops/kop-workshop/addon" with the name of your imported cluster
-
+- Update the *custom-values.yaml* file with the name of your imported cluster
 ```
 - clusterName: imported-cluster-xx
 ```
@@ -98,9 +75,11 @@ rctl create addon version -f cloudwatch-addon.yaml
 
 If you did not encounter any errors, you can optionally verify if everything was created correctly on the controller.
 
-- Navigate to the "defaultproject" project in your Org
-- Select Infrastructure -> Addons 
-- You should see an addon called "cloudwatch-addon"
+- Navigate to Rafay dashboard and your project
+
+- Select **Infrastructure -> Addons** 
+
+- You should see an addon called **cloudwatch-addon**
 
 ![CloudWatch Agent Addon](/images/cloudwatch_addon.png)
 
@@ -108,23 +87,12 @@ If you did not encounter any errors, you can optionally verify if everything was
 
 ## Step 3: Create Blueprint
 
-In this step, you will create a custom cluster blueprint with the CloudWatch addon. The "cloudwatch-blueprint.yaml" file contains the declarative specification for the bluebrint. 
+In this step, you will create a custom cluster blueprint with the CloudWatch addon. Navigate to */aws-workshops/kop-workshop/blueprint* folder. The *cloudwatch-blueprint.yaml* file contains the declarative specification for the blueprint.
+![CloudWatch Agent Addon](/images/rafay-cloudwatch-blueprint.png)
 
-- Open Terminal (on macOS/Linux) or Command Prompt (Windows) and navigate to the folder where you forked the Git repository 
-- Navigate to the folder "<your folder>/aws-workshops/kop-workshop/blueprint"  
-- Update the following section of the "cloudwatch-blueprint.yaml" specification file with details to match your environment. Replace the "xx" with the number of your project.
-
+- Update the following section with details to match your environment. Replace the *xx* with the number of your project.
 ```
 - project: aws-workshop-xx
-```
-
-```yaml hl_lines="6"
-kind: Blueprint
-metadata:
-  # blueprint name
-  name: cloudwatch-blueprint
-  #project name
-  project: aws-workshop-xx"
 ```
 
 - Type the command below to create the blueprint
@@ -135,9 +103,9 @@ rctl create blueprint -f cloudwatch-blueprint.yaml
 
 If you did not encounter any errors, you can optionally verify if everything was created correctly on the controller.
 
-- Navigate to the "aws-workshop-xx" project in your Org
-- Select Infrastructure -> Blueprint 
-- You should see an blueprint called "cloudwatch-blueprint
+- Go to your "aws-workshop-xx" project and select **Infrastructure -> Blueprint**
+
+- You should see the blueprint called "cloudwatch-blueprint
 
 ![CloudWatch Blueprint](/images/cloudwatch_blueprint.png)
 
@@ -147,32 +115,9 @@ If you did not encounter any errors, you can optionally verify if everything was
 
 Although we have a custom blueprint, we have not provided any details on what it comprises. In this step, you will create and add a new version to the custom blueprint. The YAML below is a declarative spec for the new version.  
 
-- Update the following section of the specification file with details to match your environment. Replace the "xx" with the number of your project.
-
+- Open *cloudwatch-blueprint-v1.yaml* file and update the following section with details to match your environment. Replace the *xx* with the number of your project.
 ```
 - project: aws-workshop-xx
-```
-
-```yaml hl_lines="4"
-kind: BlueprintVersion
-metadata:
-  name: v1
-  project: aws-workshop-xx
-  description: Amazon CloudWatch Agent
-spec:
-  blueprint: cloudwatch-blueprint
-  baseSystemBlueprint: default
-  baseSystemBlueprintVersion: ""
-  addons:
-    - name: cloudwatch-addon
-      version: v1
-  # cluster-scoped or namespace-scoped
-  pspScope: cluster-scoped
-  rafayIngress: true
-  rafayMonitoringAndAlerting: false
-  kubevirt: false
-  # BlockAndNotify or DetectAndNotify
-  driftAction: BlockAndNotify
 ```
 
 - Type the command below to create a new blueprint version
@@ -183,30 +128,28 @@ rctl create blueprint version -f cloudwatch-blueprint-v1.yaml
 
 If you did not encounter any errors, you can optionally verify if everything was created correctly on the controller.
 
-- Navigate to the "aws-workshop-xx"  project in your Org
-- Select Infrastructure -> Blueprint 
-- Click on the "cloudwatch-blueprint" custom cluster blueprint 
+- Select **Infrastructure -> Blueprint** in your project
 
+- Click on the **cloudwatch-blueprint** custom cluster blueprint
 ![v1 CloudWatch Blueprint](/images/cloudwatch_blueprint_newversion.png)
 
 ---
 
 ## Step 4: Apply Cluster Blueprint
 
-We will use rctl to apply the newly created blueprint to the imported cluster.
+We will use Rafay CLI (rctl) to apply the newly created blueprint to the imported cluster.
 
-- Edit the file "imported-cluster-bootstrap.yaml" that was previosuly created when importing the cluster
-- Update the cluster blueprint section of the file with the name of the newly created blueprint, "cloudwatch-blueprint"
-- Under the blueprint section, add the blueprint version to spec file
+- Edit the file *imported-cluster-bootstrap.yaml* that was previously created when importing the cluster
 
+- Update the cluster blueprint section of the file with the name of the newly created blueprint *cloudwatch-blueprint*
+
+- Under the blueprint section add the blueprint version to spec file
 ``` yaml
     blueprint: cloudwatch-blueprint
     blueprintversion: v1
 ```
 
-- Save the file
-- Execute the following command to update the cluster with the newly created blueprint
-
+- Save the file and execute the following command to update the cluster with the newly created blueprint
 ```
 rctl apply -f imported-cluster-bootstrap.yaml
 ```

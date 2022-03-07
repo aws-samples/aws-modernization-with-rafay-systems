@@ -5,9 +5,11 @@ chapter: true
 weight: 13
 ---
 
-## What Will You Do
+In this section, you will: 
 
-This is part 4 of a multi-part workshop.  In this section, you will: 
+<!--
+TODO: Rafay team - the same - why we are teaching to access Zero Trust Kubectl, what problem we are trying to solve
+-->
 
 - Remotely access an imported Amazon EKS cluster using the Rafay integrated browser based Zero Trust Kubectl
 - View Kubectl audit logs
@@ -21,12 +23,12 @@ Estimated time burden for this part is 5 minutes.
 ## Step 1: Zero Trust Kubectl 
 
 - Navigate to your aws-workshop project and Infrastructure -> Clusters
-- Click on the "Kubectl" link on the imported cluster. This will provide you with a web based, zero trust kubectl shell. 
-- Type in a kubectl command such as "kubectl get ns" to get a response from the remote cluster on your desktop operating behind a NAT/firewall. 
+- Click on the **Kubectl** link on the imported cluster. This will provide you with a web based, zero trust kubectl shell. 
+- Type in a kubectl command such as `kubectl get ns` to get a response from the remote cluster on your desktop operating behind a NAT/firewall. 
 
 ![Web ZTKA](/images/ztka_org_admin.png)
 
-The controller injects a service account (sa) "Just In Time(JIT)" on the target cluster. The service account is automatically configured with the user's role in the Org. You can view the JIT service account by using the following command. In the example below, the service account for the user "demos@rafay.co" was created just "5 seconds" back as the user opened the web based kubectl console. The service account is automatically removed from the target cluster once the configured lifetime expires. 
+The controller injects a service account (sa) *Just In Time(JIT)* on the target cluster. The service account is automatically configured with the user's role in the Org. You can view the JIT service account by using the following command. In the example below, the service account for the user *demos@rafay.co* was created just *5 seconds* back as the user opened the web based kubectl console. The service account is automatically removed from the target cluster once the configured lifetime expires. 
 
 ``` hl_lines="5" 
 kubectl get sa -n rafay-system
@@ -47,9 +49,7 @@ All commands performed using the zero trust kubectl channel are centralized thro
 - Click on Home -> System -> Audit Logs
 - Click on the Kubectl tab
 
-Audit logs can be viewed by "API" or "Commands" (for web based shell). See an example of the audit logs below.
-
-
+Audit logs can be viewed by **API** or **Commands** (for web based shell). See an example of the audit logs below.
 ![ZTKA Audit Trail](/images/ztka_audit.png)
 
 ---

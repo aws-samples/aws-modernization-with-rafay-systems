@@ -5,11 +5,11 @@ chapter: true
 weight: 12
 ---
 
+In this section of the workshop you will provision a new Amazon EKS cluster and import an existing Amazon EKS cluster. 
 
-## What Will You Do
-
-This is part 2 of a multi-part workshop.  In this section of the workshop you will provision a new Amazon EKS cluster and import an existing Amazon EKS cluster.
-
+<!--
+TODO: Rafay team to add more - why we run provision and import example, what is the difference, how it is related to preprovisioned cluster in AWS account
+-->
 ---
 
 ## Step 1: Provision Amazon EKS Cluster
@@ -19,8 +19,10 @@ In this step, you will configure and customize your Amazon EKS Cluster specifica
 Provisioning will take approximately 40 minutes to complete. The final step in the process is the blueprint sync for the default blueprint. This can take a few minutes to complete because this requires the download of several container images and deployment of monitoring and log aggregation components.
 
 - Open Terminal (on macOS/Linux) or Command Prompt (Windows) and navigate to the folder where you forked the Git repository 
-- Navigate to the folder "<your folder>/aws-workshops/kop-workshop/cluster"
-- The "provisioned-cluster.yaml" file contains the declarative specification for the cluster.
+
+- Navigate to the folder *<your folder>/aws-workshops/kop-workshop/cluster*
+
+- The *provisioned-cluster.yaml* file contains the declarative specification for the cluster:
 
 ```yaml hl_lines="3 4 7 14"
 kind: Cluster
@@ -45,7 +47,7 @@ managedNodeGroups:
     desiredCapacity: 2
 ```
 
-- Update the following sections of the specification file with details to match your environment. Replace the "xx" with the number of your project.
+- Update the following sections of the specification file with details to match your environment. Replace the *xx* with the number of your project.
 
 ```
 - name: provisioned-cluster-xx
@@ -55,11 +57,8 @@ managedNodeGroups:
 ```
 
 - Save the file
-- Execute the following command to provision the cluster from the specification file previously defined
-```
-rctl apply -f provisioned-cluster.yaml
-```
-***Expected output (with a task id):***
+
+- Execute `rctl apply -f provisioned-cluster.yaml` command to provision the cluster from the specification file previously defined. Expected output (with a task id):
 
 ```
 {
@@ -81,12 +80,7 @@ rctl apply -f provisioned-cluster.yaml
 }
 ```
 
-To retrieve the status of the apply operation, enter the below command with the generated task id
-```
-rctl status apply d2wg4k8
-```
-
-***Expected Output***
+- Execute `rctl status apply <TASK ID>` to retrieve the status of the apply operation with the generated task id. Expected output:
 
 ```
 {
@@ -109,13 +103,13 @@ rctl status apply d2wg4k8
 ```
 
 - Login to the web console and view the cluster being provisioned
-
 ![Create Cluster](/images/cluster-provision-1.png)
 
 Once the cluster finishes provisioning, download the cluster configuration file and compare it to the specification file used to create the cluster.  The two files will match.
 
-- Go to Clusters -> Infrastructure.  
-- Click on the Settings Icon for the newly created cluster and select "Download Cluster Config"
+- Go to *Clusters -> Infrastructure*
+
+- Click on the ***Settings*** icon for the newly created cluster and select ***Download Cluster Config***
 
 ---
 

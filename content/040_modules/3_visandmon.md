@@ -2,24 +2,29 @@
 title: Part 3 - Visibility and Monitoring 
 description: Learn Rafay Kubernetes Operation Platform (KOP) with EKS Workshop. Rafay is a SaaS-first Kubernetes Operations Platform with enterprise-class scalability.
 chapter: true
-weight: 16
+weight: 13
 ---
 
-## What Will You Do
+In this section, you will explore the integrated visibility and monitoring capabilities of the platform. Specifically, you will explore the dashboards that provide you access to both critical summary and trends. 
 
-This is part 3 of a multi-part workshop. In this section, you will explore the integrated visibility and monitoring capabilities of the platform. Specifically, you will explore the dashboards that provide you access to both critical summary and trends. 
+<!--
+TODO: Rafay team - add why it is important, use case\scenario, problem statement\task\solution\expected result. Right now it has only screenshots of Rafay and no story. There should be the problem statement and learning objective how to address it
+-->
 
 - You will start with a "bird's eye view" and contextually click in one level at a time, going deeper and deeper. 
 - Critical metrics are automatically scraped and aggregated at the controller in a centralized time series database (TSDB)
 - Interactive, real time access to this data is provided
 
-
 **Estimated Time**
 
 Estimated time burden for this part is 5 minutes. 
 
-!!! Important
-    This part requires the "monitoring addon" to be enabled in the cluster blueprint. 
+<!--
+TODO: Rafay team - add steps how to enable monitoring addon, what is it and link to the documentation
+-->
+{{% notice info %}}
+This part requires the **monitoring addon** to be enabled in the cluster blueprint. 
+{{% /notice %}}
 
 ---
 
@@ -53,14 +58,14 @@ In the cluster dashboard, click on Nodes. This will provide you an overview of a
 
 ![Node Dashboard](/images/node_dashboard.png)
 
-Click on "Overview" for one of your nodes. This will provide you with a dashboard for the node.
+Click on **Overview** for one of your nodes. This will provide you with a dashboard for the node.
 
 ![Node Dashboard Details](/images/node_dashboard_trends.png)
 
 ---
 
 ## k8s Resources 
-Click on the "Resources" tab. This will provide you access to an "integrated Kubernetes dashboard" where you can view the k8s resources organized by type, by namespace etc. 
+Click on the **Resources** tab. This will provide you access to an integrated Kubernetes dashboard where you can view the k8s resources organized by type, by namespace etc. 
 
 ![Kubernetes Dashboard](/images/k8s_resources.png)
 
@@ -89,5 +94,7 @@ Now, click on the container in the configuration to go to the "container dashboa
 ## Recap
 
 Congratulations! At this point, you have successfully accessed the integrated dashboards for visibility and monitoring.
-
+<!--
+TODO: Rafay team - replace "have successfully accessed the integrated dashboards for visibility and monitoring" with more specific results smth like learned how to address problem 1 and 2 with Rafay dashboards and you can use this knowledge to solve more problems (link to some do with use cases) using those capabilities...
+-->
 ---

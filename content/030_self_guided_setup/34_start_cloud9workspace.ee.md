@@ -1,7 +1,7 @@
 ---
-title: "2. Create a Workspace"
+title: "1. Create a Workspace"
 chapter: true
-weight: 12
+weight: 14
 ---
 
 ## Set up the Workspace
@@ -11,24 +11,23 @@ weight: 12
 We will use Amazon Cloud9 to access our AWS accounts via the AWS CLI in this Workshop.  There are a few steps to complete to set this up
 
 1. Create a new Cloud9 IDE environment
-1. Create an IAM role for your workspace
-1. Attach the IAM role to your workspace
+1. Create an EKS cluster
 1. Configure workshop specific requirements
 
 
 ## Create a new Cloud9 IDE environment
 
-1. Within the AWS console, use the region drop list to select **us-east-1 (N. Virginia)**.  This will ensure the workshop script provisions the resources in this same region..
+1 . Within the AWS console, use the region drop list to select **us-east-1 (N. Virginia)**.  This will ensure the workshop script provisions the resources in this same region..
 
-1. Navigate to the [Cloud9 console](https://console.aws.amazon.com/cloud9/home) or just search for it under the **AWS console services** menu.
+2 . Navigate to the [Cloud9 console](https://console.aws.amazon.com/cloud9/home) or just search for it under the **AWS console services** menu.
 
-1. Click the **Create environment** button
+3 . Click the **Create environment** button
 
-1. For the name use `rafay-workshop`, then click **Next step**
+4 . For the name use `rafay-workshop`, then click **Next step**
 
-1. Select the default instance type **t3.small**
+5 . Select the default instance type **t3.small**
 
-1. Leave all the other settings as default and click **Next step** followed by **Create environment**
+6 . Leave all the other settings as default and click **Next step** followed by **Create environment**
 
 <img src=/images/rafay-workspace.png>
 

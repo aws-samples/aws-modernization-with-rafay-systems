@@ -1,5 +1,5 @@
 ---
-title: "3. Attach IAM Role"
+title: "Attach IAM Role"
 chapter: true
 weight: 14
 ---
@@ -14,7 +14,7 @@ Since an EKS Cluster has already been pre-provisioned with all the IAM roles cre
 
     ![Attach IAM role](/images/rafay-attach-role.png)
 
-3. Choose the role that contains "BastionStack" in it.
+3. Choose the role that contains `BastionStack` in it.
 
     ![Bastion Instance Profile role](/images/tigera-modify-iam.png)
 
