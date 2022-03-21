@@ -19,9 +19,7 @@ We will use Amazon Cloud9 to access our AWS accounts via the AWS CLI in this Wor
 
 1. Within the AWS console, use the region drop list to select **us-east-1 (N. Virginia)**.  This will ensure the workshop script provisions the resources in this same region.
 
-1. Navigate to the [Cloud9 console - Account environments](https://console.aws.amazon.com/cloud9/home/account) or just search for it under the **AWS console services** menu and navigate to **Account environments**
-
-1. Select **aws-workshop**
+1. Navigate to the [Cloud9 console](https://aws.amazon.com/cloud9/). You should see Cloud9 environment pre-deployed for your workshop needs (**EKSLabIDE**), click **Open IDE**.
    ![AWS Cloud9 Workshop environment](/images/cloud9_awsworkshop.png)
 
 {{% notice info %}}
@@ -32,11 +30,11 @@ This will take about a minute to start it first time
 
 When the environment comes up, customize the environment by:
 
-1. Close the **welcome page** tab
+1. Close the **welcome page** tab and **AWS Toolkit - Quick Start** tab
 
 1. Close the **lower work area** tab
 
-1. Open a new **terminal** tab in the main work area.
+1. Open a new **terminal** tab in the main work area (**Window - New Terminal**).
 
 {{% notice tip %}}
 If you don't like this dark theme, you can change it from the **View / Themes** Cloud9 workspace menu.
