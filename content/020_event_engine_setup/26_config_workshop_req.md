@@ -45,7 +45,7 @@ the EKS IAM authentication, so we will disable it and rely on the IAM role inste
       test -n "$AWS_REGION" && echo AWS_REGION is "$AWS_REGION" || echo AWS_REGION is not set
       
       # Validate that our IAM role is valid.
-      aws sts get-caller-identity --query Arn | grep mod -q && echo "IAM role valid" || echo "IAM role NOT valid"
+      aws sts get-caller-identity --query Arn | grep eksworkshop-admin -q && echo "IAM role valid" || echo "IAM role NOT valid"
       ```
       {{% notice warning %}}
    If the IAM role is not valid, <span style="color: red;">**DO NOT PROCEED**</span>. Go back and confirm the steps on this page.
@@ -54,7 +54,7 @@ the EKS IAM authentication, so we will disable it and rely on the IAM role inste
 5. Now we'll start installing kubectl and set up our Cloud9 instance to be to connect to the pre-provisioned EKS cluster. Copy and run (paste with **Ctrl+P** or **CMD+P**) the commands below. Before running it, review what it does by reading through the comments.
 
       ```sh
-      # Verify there is an EKS cluster already provisioned, the EKS cluster's name is basic-eks
+      # Verify there is an EKS cluster already provisioned, the EKS cluster's name is eksworkshop-eksctl
       aws eks list-clusters --region us-east-1
       
       # Install kubectl binary
@@ -70,7 +70,7 @@ the EKS IAM authentication, so we will disable it and rely on the IAM role inste
       kubectl version
       
       # Update the kubeconfig file and point to the Kube API server
-      aws eks update-kubeconfig --name basic-eks --region us-east-1
+      aws eks update-kubeconfig --name eksworkshop-eksctl --region us-east-1
       
       # Verify you are connected to EKS cluster
       kubectl get pods --all-namespaces
