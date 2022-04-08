@@ -4,21 +4,21 @@ chapter: true
 weight: 1
 ---
 
-![Rafay Logo](/010_introduction/images/Rafay-Services-V3.png)
+![Rafay Logo](../static/images/rafay-logo.png)
 # Rafay Kubernetes Operations Platform Workshop
 
 ### Welcome
 
-This is a Rafay / AWS guided workshop in which participates will learn how to automate the operations of Amazon EKS clusters through Rafay's Kubernetes Operations Platform.  The workshop's targeted audience is cloud operations teams, DevOps engineers, Site Reliability Engineers (SREs), or other infrastructure leads that are managing the lifecycle operations of Kubernetes for their organization.
+Welcome to the multi-cluster Kubernetes operations workshop hosted by Rafay. This self-paced workshop is an introduction to automating and centralizing Amazon EKS lifecycle operations with Rafay’s Kubernetes Operations Platform. Cloud operations, DevOps engineers, site reliability engineers (SREs), or other infrastructure leads will learn a practical approach to managing Amazon EKS clusters.
 
-### Learning Objectives
-- How to provision a new EKS cluster with Rafay Kubernetes Operations Platform and import existing clusters for centralized operations.
-- How to create centralized configurations for the look and feel of EKS clusters being managed across an enterprise.
-- How to automate the upgrade of a new Kubernetes version across EKS clusters.
-- How to enable centralized zero trust access into Kubernetes clusters. 
-- How to audit access into EKS clusters and changes being made to EKS cluster 
+By the end of this workshop, you’ll be able to:
+
+- Automate provisioning of new Amazon EKS clusters and import existing clusters for centralized operations.
+- Create centralized policy configurations to ensure consistency of Amazon EKS clusters being managed across an enterprise.
+- Provide fleet-wide zero-trust access and auditing for all Amazon EKS clusters streamlining RBAC and support for corp identity / cloud credentials.
+- Instantly monitor and analyze health, utilization, and user-level activities across all Amazon EKS clusters. 
 
 ### Pre-Requisites
-- You have familiarity with Kubernetes and Amazon EKS.
-- Access to a Github account that you can download and update configuration files with.  If you don't have a GitHub account, you can sign-up [here](https://github.com/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F&source=header-home) 
-- Workshop participants will be provided with Rafay and AWS account credentials that will be used throughout the Workshop.
+- Familiarity with Kubernetes and Amazon EKS.
+- Access to a Github account that you can download and update configuration files with. 
+- Access to a Rafay account and Amazon Console. Signup for a free trial [here](https://rafay.co/start/).
