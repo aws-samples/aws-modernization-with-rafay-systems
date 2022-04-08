@@ -24,7 +24,7 @@ Projects are a way to implement multi tenancy within an Organization and impleme
 Creation and Deletion of Projects are privileged operations. This is typically performed by an Org Admin using the Web Console because RBAC assignments also need to be implemented along with this.
 {{% /notice %}}
 
-Prior to proceed with the setup, please navigate to [Rafay Home dashboard](https://console.rafay.dev/#/main) and identify the project number your have been assigned to (it is the number in *aws-workshop-xx* project name). Please use it instead of *xx* value for naming convention in the steps below.
+Prior to proceeding with the setup, please navigate to [Rafay Home dashboard](https://console.rafay.dev/#/main) and identify the project number you have been assigned to (it is the number in *aws-workshop-xx* project name). Please use this number instead of *xx* value for the naming convention in the steps below.
 ![Rafay Project](/images/rafay_dashboard_project.png)
 
 

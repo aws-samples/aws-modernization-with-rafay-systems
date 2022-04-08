@@ -139,37 +139,18 @@ If you did not encounter any errors, you can optionally verify if everything was
 
 We will use Rafay CLI (rctl) to apply the newly created blueprint to the imported cluster.
 
-- Edit the file *imported-cluster-bootstrap.yaml* that was previously created when importing the cluster
-
-- Update the cluster blueprint section of the file with the name of the newly created blueprint *cloudwatch-blueprint*
-
-- Under the blueprint section add the blueprint version to spec file
-``` yaml
-    blueprint: cloudwatch-blueprint
-    blueprintversion: v1
+- Run the following command to update the cluster with the newly created blueprint.  Replace the “xx” with the number of your project.
+```
+rctl update cluster imported-cluster-xx -b cloudwatch-blueprint --blueprint-version v1
 ```
 
-- Save the file and execute the following command to update the cluster with the newly created blueprint
-```
-rctl apply -f imported-cluster-bootstrap.yaml
-```
+If you did not encounter any errors, you can optionally verify if everything was created correctly on the controller.
 
-***Expected output (with a task id):***
+- Select **Infrastructure -> Clusters** in your project
+- View that the updated blueprint is associated with the cluster
 
-```
-{
-  "taskset_id": "dk69p0k",
-  "operations": [
-    {
-      "operation": "BlueprintUpdation",
-      "resource_name": "imported-cluster",
-      "status": "PROVISION_TASK_STATUS_PENDING"
-    }
-  ],
-  "comments": "The status of the operations can be fetched using taskset_id",
-  "status": "PROVISION_TASKSET_STATUS_PENDING"
-}
-```
+![v1 CloudWatch Blueprint Apply](/images/cloudwatch_blueprint_apply.png)
+
 
 ## Recap
 
