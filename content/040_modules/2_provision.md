@@ -121,6 +121,7 @@ In this step, you will import an existing Amazon EKS cluster
 
 ```
 rctl create cluster imported imported-cluster-xx > imported-cluster-bootstrap.yaml
+sleep 60
 kubectl apply -f imported-cluster-bootstrap.yaml
 ```
 
