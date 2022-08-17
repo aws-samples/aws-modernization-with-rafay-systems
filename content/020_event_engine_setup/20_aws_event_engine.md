@@ -14,7 +14,7 @@ If you are currently logged in to an AWS Account, you can log out using this [li
 
 ### Logging into Event Engine Dashboard
 
-1. Connect to the portal by clicking the button or browsing to [https://dashboard.eventengine.run/](https://dashboard.eventengine.run/). The following screen shows up. Enter the provided hash in the text box. The button in the bottom right corner changes to **Accept Terms & Login**. Click on that button to continue.
+1. Connect to the portal by clicking the button or browsing to [Event Engine dashboard](https://dashboard.eventengine.run/login?hash=b88b-0172c7cb74-83). The following screen shows up. Enter the provided hash in the text box. The button in the bottom right corner changes to **Accept Terms & Login**. Click on that button to continue.
    ![Event Engine](/images/event-engine-initial-screen.png)
 
 2. You will be asked to Sign in. Simply choose **Email One-Time Password (OTP)** option, enter your email, and click **Send Passcode**. Check you email for OTP 6-digit code and enter it on the screen.
