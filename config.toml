@@ -32,7 +32,7 @@ enableEmoji = true
   # A title for shortcuts in menu is set by default. Set this to true to disable it. 
   disableShortcutsTitle = false
   # When using mulitlingual website, disable the switch language button.
-  disableLanguageSwitchingButton = false
+  disableLanguageSwitchingButton = true
   # Hide breadcrumbs in the header and only show the current page title
   disableBreadcrumb = false
   # Hide Next and Previous page buttons normally displayed full height beside content
@@ -53,17 +53,17 @@ weight = 10
 [[menu.shortcuts]]
 name = "Rafay Homepage"
 url = "https://rafay.co"
-weight = 10
+weight = 13
 
 [[menu.shortcuts]]
 name = "Rafay Free Trial"
 url = "https://rafay.co/start"
-weight = 11
+weight = 12
 
 [[menu.shortcuts]]
 name = "Rafay Docs"
 url = "https://docs.rafay.co"
-weight = 20
+weight = 11
 
 [[menu.shortcuts]]
 name = "<i class='fas fa-graduation-cap'></i> Modernization Workshops"
@@ -78,9 +78,13 @@ weight = 20
 [Languages]
   [Languages.ee]
     title = "Event Engine"
-    weight = 1
-    languageName = "Event Engine"
-  [Languages.oyo]
-    title = "Self-guided"
     weight = 2
-    languageName = "Self-guided"
+    languageName = "Event Engine"
+  [Languages.sg]
+    title = "Self guided"
+    weight = 3
+    languageName = "Self Guided"
+  [Languages.oyo]
+    title = "Default"
+    weight = 1
+    languageName = "Default"
