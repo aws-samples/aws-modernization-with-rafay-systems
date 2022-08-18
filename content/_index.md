@@ -4,7 +4,7 @@ chapter: true
 weight: 1
 ---
 
-![Rafay Logo](../static/images/rafay-logo.png)
+![Rafay Logo](/images/rafay-logo.png)
 # Rafay Kubernetes Operations Platform Workshop
 
 ### Welcome
