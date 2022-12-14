@@ -15,7 +15,7 @@ Parameters:
   WebsiteBucket:
     Type: String
     Description: Website S3 bucket name
-    Default: rafay-systems.awsworkshop.io
+    Default: rafay.awsworkshop.io
   CloudFrontDistroId:
     Type: String
     Description: CloudFront distribution ID 
